@@ -1,0 +1,44 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/internal-regex": "^vsl-player/"
+    },
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": ["react", "react-hooks", "import", "jsdoc"],
+    "overrides": [
+        {
+            "extends": [
+                "plugin:@typescript-eslint/recommended",
+                "plugin:@typescript-eslint/stylistic"
+            ],
+            "files": ["**/*.ts", "**/*.tsx"],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "sourceType": "module"
+            },
+            "plugins": ["@typescript-eslint"]
+        },
+        {
+            "files": ["**/*.tsx?"],
+            "rules": {
+                "jsdoc/no-types": "error",
+                "jsdoc/no-undefined-types": "error"
+            }
+        }
+    ]
+}

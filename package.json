@@ -1,0 +1,38 @@
+{
+    "name": "vsl-player-project",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "lint": "eslint packages/**/{src,test}/**/*.{js,ts,jsx,tsx} --no-error-on-unmatched-pattern",
+        "style": "prettier --write {src,test}/**/* ./*.{json,*.json} !package-lock.json !yarn.lock -u --no-error-on-unmatched-pattern",
+        "format": "prettier --write .",
+        "p:vsl-player": "yarn workspace vsl-player",
+        "build": "concurrently --kill-others \"yarn p:vsl-player build\"",
+        "prepare": "husky install"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "engines": {
+        "node": ">=18.0.0 <19.0.0"
+    },
+    "devDependencies": {
+        "@swc/cli": "^0.1.62",
+        "@swc/core": "^1.3.78",
+        "@types/node": "^20.5.1",
+        "@types/react": "^18.2.20",
+        "@types/react-dom": "^18.2.7",
+        "@typescript-eslint/eslint-plugin": "^6.4.1",
+        "@typescript-eslint/parser": "^6.4.1",
+        "concurrently": "^8.2.0",
+        "eslint": "^8.47.0",
+        "eslint-plugin-import": "^2.28.1",
+        "eslint-plugin-jsdoc": "^46.5.0",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^14.0.1",
+        "prettier": "^3.0.2",
+        "typescript": "^5.1.6"
+    }
+}

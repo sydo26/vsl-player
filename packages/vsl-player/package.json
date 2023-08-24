@@ -1,0 +1,66 @@
+{
+    "name": "vsl-player",
+    "version": "0.0.1",
+    "main": "./index.js",
+    "scripts": {
+        "build:cjs": "swc ./src -d ./cjs",
+        "build:umd": "swc ./src -d ./umd -C module.type=umd",
+        "build:types": "tsc --emitDeclarationOnly --outDir ./",
+        "build": "concurrently \"yarn run build:cjs\" \"yarn run build:umd\" \"yarn run build:types\""
+    },
+    "exports": {
+        ".": {
+            "default": "./index.js",
+            "types": "./index.d.ts"
+        },
+        "./package.json": "./package.json"
+    },
+    "homepage": "https://github.com/sydo26/vsl-player",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sydo26/vsl-player.git",
+        "directory": "packages/vsl-player"
+    },
+    "keywords": [
+        "react",
+        "video",
+        "player",
+        "vsl"
+    ],
+    "bugs": {
+        "url": "https://github.com/sydo26/vsl-player/issues"
+    },
+    "files": [
+        "umd",
+        "cjs",
+        "@types",
+        "LICENSE-APACHE",
+        "LICENSE-MIT",
+        "README.md"
+    ],
+    "description": "A component for video player optimized for Video Sales Letters (VSLs)",
+    "author": "Vinicius Roque <sydoafk@gmail.com>",
+    "contributors": [
+        {
+            "name": "Vinicius Roque",
+            "email": "sydoafk@gmail.com"
+        }
+    ],
+    "peerDependencies": {
+        "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://opensource.org/license/MIT/"
+        },
+        {
+            "type": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    ],
+    "engines": {
+        "node": ">=18.0.0 <19.0.0"
+    }
+}

@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+. "$(dirname -- "$0")/common.sh"
+
+if ! [ -z "${DEV_TTY_AVAILABLE+x}" ]
+then
+  FORCE_COLOR=1 yarn lint-staged
+else
+  FORCE_COLOR=1 yarn lint-staged -q
+fi
